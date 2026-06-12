@@ -7,7 +7,7 @@ configuration:
   analytics:
     provider: plausible
   locale: en-US
-  baseUrl: anklus.github.io
+  baseUrl: anklus-dev.github.io
   ignorePatterns:
     - private
     - templates
