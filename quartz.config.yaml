@@ -110,6 +110,11 @@ plugins:
     order: 92
   - source: github:quartz-community/fonts
     enabled: true
+    options:
+      typography:
+        header: Schibsted Grotesk
+        body: JetBrains Mono
+        code: JetBrains Mono
   - source: github:quartz-community/remove-draft
     enabled: true
   - source: github:quartz-community/explicit-publish
@@ -264,7 +269,7 @@ plugins:
       subdir: plugin
     enabled: true
     options:
-      theme: default
+      theme: catppuccin
   - source: github:quartz-community/obsidian-plugin-excalidraw
     enabled: true
     options:
