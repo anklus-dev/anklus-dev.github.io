@@ -1,1 +1,5 @@
+---
+tags:
+  - areas/technology/right-to-repair
+---
 The Right to Repair is a fundamental philosophy, social & political movement, and products design methodology. It supposes that consumers, as the future owners of a product, should be expected to have a 'right' to 'repair' that item. This could branch from ensuring adequate access to parts, to designing a product with user repair in mind from the beginning.
