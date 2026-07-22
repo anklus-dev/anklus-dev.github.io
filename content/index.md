@@ -1,6 +1,5 @@
 ---
 tags:
-  - index
 ---
 ## Hi, I'm **Matthew Lindsey**.
 
