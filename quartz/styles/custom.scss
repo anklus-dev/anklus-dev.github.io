@@ -1,3 +1,65 @@
 @use "./variables.scss" as *;
 
-// put your custom CSS here!
+/* ==========================================================================
+   Matthew's Portfolio Custom Styles
+   ========================================================================== */
+
+/* 1. Scale site-wide font size up & increase text boldness */
+html {
+  font-size: 115%; /* Scales base text 1.15x larger without breaking layout proportions */
+}
+
+body, p, li, span {
+  font-weight: 450; /* Bumps text weight up slightly from 400 for starker legibility */
+}
+
+/* 2. Ensure bold text inside headings inherits the heading's color */
+h1 strong, h2 strong, h3 strong, h4 strong, h5 strong, h6 strong,
+h1 b, h2 b, h3 b, h4 b, h5 b, h6 b {
+  color: inherit;
+}
+
+/* 3. Inverted, high-contrast wikilinks (Internal Links) */
+a.internal {
+  color: var(--light) !important; 
+  text-decoration: none;
+  font-weight: 550; 
+  
+  /* Standard text highlight padding (no inline-block required) */
+  padding: 0 0.25em; 
+  border-radius: 4px;
+  
+  /* If the link wraps across two lines, this ensures both lines get rounded corners */
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  
+  /* The base color and the sheen gradient combined */
+  background-color: #a6adc8 !important;
+  background-image: linear-gradient(
+    60deg,
+    transparent 40%,
+    rgba(249, 226, 175, 0.8) 50%,
+    transparent 60%
+  );
+  
+  background-repeat: no-repeat;
+  
+  /* Make the gradient 3x wider than the link so the sheen has room to hide on the edges */
+  background-size: 300% 100%;
+  
+  /* 100% places the middle of the gradient off-screen to the left */
+  background-position: 100% 0; 
+  
+  /* Reset sheen position instantly when mouse leaves */
+  transition: background-color 0.3s ease; 
+  
+  &:hover {
+    background-color: #cdd6f4 !important;
+    
+    /* 0% pulls the gradient across the link to hide off-screen to the right */
+    background-position: 0% 0; 
+    
+    /* Only animate the background-position on the forward hover */
+    transition: background-color 0.3s ease, background-position 0.5s ease-in-out; 
+  }
+}
