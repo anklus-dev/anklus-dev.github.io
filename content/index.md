@@ -5,7 +5,7 @@ title: Homepage
 
 I'm **Matthew Lindsey**
 
-I'm an undergraduate student of Computer Science at Georgia State University's Perimeter College. 
+I'm an undergraduate student of Computer Science at Georgia State University Perimeter College. 
 
 # Interests
 

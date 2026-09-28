@@ -106,6 +106,7 @@ export default (() => {
             return resource
           }
         })}
+        <script defer src={joinSegments(baseDir, "static/parallax.js")} />
       </head>
     )
   }

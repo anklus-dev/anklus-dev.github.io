@@ -63,3 +63,60 @@ a.internal {
     transition: background-color 0.3s ease, background-position 0.5s ease-in-out; 
   }
 }
+
+/* ==========================================================================
+   Geometric background overlay
+   ========================================================================== */
+
+:root {
+  --bg: #1e1e2e; /* Mocha Base */
+}
+:root[saved-theme="light"] {
+  --bg: #eff1f5; /* Latte Base */
+}
+
+/* One background for the whole page, no sidebar mismatch */
+html {
+  background-color: var(--bg);
+}
+
+#quartz-root.page,
+#quartz-body {
+  background: transparent !important;
+}
+
+#quartz-root.page {
+  position: relative;
+  z-index: 1;
+}
+
+#quartz-root .center,
+#quartz-root .page-header,
+#quartz-root .page-footer {
+  background: transparent !important;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: -40px;
+  z-index: 0; /* back behind content */
+  pointer-events: none;
+  transform: translate3d(var(--px, 0px), var(--py, 0px), 0);
+  will-change: transform;
+
+  /* Line color: lower the % for subtler lines, raise it for stronger ones */
+  --line: color-mix(in srgb, var(--gray) 6%, transparent);
+
+  /* The fill is a soft radial fade... */
+  background-image: radial-gradient(ellipse at 50% 40%, var(--line) 20%, transparent 95%);
+
+  /* ...and the mask cuts it into a thin hexagon grid (one 20px-sided tile) */
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34.641' height='60' viewBox='0 0 34.641 60'%3E%3Cpath d='M0 10L17.32 0L34.641 10M0 10V30M34.641 10V30M0 30L17.32 40L34.641 30M17.32 40V60' fill='none' stroke='black' stroke-width='1'/%3E%3C/svg%3E");
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='34.641' height='60' viewBox='0 0 34.641 60'%3E%3Cpath d='M0 10L17.32 0L34.641 10M0 10V30M34.641 10V30M0 30L17.32 40L34.641 30M17.32 40V60' fill='none' stroke='black' stroke-width='1'/%3E%3C/svg%3E");
+  -webkit-mask-size: 51.962px 90px;
+  mask-size: 51.962px 90px;
+  -webkit-mask-repeat: repeat;
+  mask-repeat: repeat;
+
+}
