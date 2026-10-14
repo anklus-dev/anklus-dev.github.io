@@ -1,6 +1,6 @@
 ---
 title: Planned Obsolescence
-draft: false
+draft: true
 date: 2026-08-27
 ---
 how software functions makes me highly skeptical of "parts-pairing" (where microcontrollers cryptographically lock screens or batteries to a single motherboard, requiring proprietary dealer authorization to swap).
